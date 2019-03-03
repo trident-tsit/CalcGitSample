@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CalcGitSample</string>
+    <string name="tanka_label">単価</string>
+    <string name="su_label">数量</string>
+    <string name="tanka_err">単価を入力してください</string>
+    <string name="su_err">数量を入力してください</string>
+    <string name="keisan_label">計算</string>
+    <string name="keisan_kingaku">合計金額</string>
+</resources>
