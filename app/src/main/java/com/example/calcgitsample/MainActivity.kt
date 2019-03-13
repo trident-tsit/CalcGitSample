@@ -43,8 +43,22 @@ class MainActivity : AppCompatActivity() {
 
             if (isValid) {
 
-                //合計金額を算出
-                val kingaku = tankaText.toInt() * suText.toInt()
+                //合計金額を算出 （数量が10以上なら1割引きに変更）
+                val nebikikake = 0.9    //掛け率
+                var nebikiflg = false  //値引チェック用フラグ
+                val kingaku: Int          //合計金額格納用変数
+
+                if(suText.toInt() >= 10){
+                    nebikiflg = true
+                }
+
+                if(nebikiflg){
+                    //値引きありのとき
+                    kingaku = (tankaText.toInt() * suText.toInt() * nebikikake).toInt()
+                }else{
+                    //値引きなしのとき
+                    kingaku = tankaText.toInt() * suText.toInt()
+                }
 
                 //トーストで合計金額を表示
                 Toast.makeText(applicationContext,"合計金額は${kingaku.toString()}円です",Toast.LENGTH_LONG).show()
