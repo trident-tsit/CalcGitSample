@@ -45,10 +45,11 @@ class MainActivity : AppCompatActivity() {
 
                 //合計金額を算出 （数量が10以上なら1割引きに変更）
                 val nebikikake = 0.9    //掛け率
+                val su =10                  //値引判定用変数
                 var nebikiflg = false  //値引チェック用フラグ
                 val kingaku: Int          //合計金額格納用変数
 
-                if(suText.toInt() >= 10){
+                if(suText.toInt() >= su){
                     nebikiflg = true
                 }
 
