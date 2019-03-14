@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                 val nebikikake = 0.9    //掛け率
                 val su =10              //値引判定用の数量
                 var nebikiflg = false  //値引チェック用のフラグ
-                val kingaku: Int          //合計金額格納用
+                val kingaku: Int        //合計金額格納用
 
                 if(suText.toInt() >= su){
                     nebikiflg = true
