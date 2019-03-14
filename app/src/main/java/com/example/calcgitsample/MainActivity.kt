@@ -43,27 +43,19 @@ class MainActivity : AppCompatActivity() {
 
             if (isValid) {
 
-                //合計金額を算出 （数量が10以上なら1割引き、50以上なら2割引き）
-                val nebikikake1 = 0.9    //掛け率1
-                val nebikikake2 = 0.8    //掛け率2
-                val su1 =10              //値引判定用数量1
-                val su2 =50              //値引判定用数量2
-                var nebikiflg = false  //値引チェック用フラグ
-                val kingaku: Int        //合計金額格納用
+                //合計金額を算出 （数量が10以上なら1割引きに変更）
+                val nebikikake = 0.9    //掛け率
+                val su =10              //値引判定用の数量
+                var nebikiflg = false  //値引チェック用のフラグ
+                val kingaku: Int          //合計金額格納用
 
-                if(suText.toInt() >= su1){
+                if(suText.toInt() >= su){
                     nebikiflg = true
                 }
 
                 if(nebikiflg){
                     //値引きありのとき
-                    if(suText.toInt() >= su2){
-                        //2割引きのとき
-                        kingaku = (tankaText.toInt() * suText.toInt() * nebikikake2).toInt()
-                    }else {
-                        //1割引きのとき
-                        kingaku = (tankaText.toInt() * suText.toInt() * nebikikake1).toInt()
-                    }
+                    kingaku = (tankaText.toInt() * suText.toInt() * nebikikake).toInt()
                 }else{
                     //値引きなしのとき
                     kingaku = tankaText.toInt() * suText.toInt()
